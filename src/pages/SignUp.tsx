@@ -7,10 +7,11 @@ const SignUp = () => {
     const [isSign, setIsSign] = useState('register')
 
     async function login(ev?:any) {
-        ev.preventDefault()
+        // ev.preventDefault()
         try {
             console.log(username, password)
             await pb.collection('users').authWithPassword(username, password)
+            console.log("logged in")
         } catch (err) {
             console.error('Failed to register user:', err)
         }
@@ -50,9 +51,15 @@ const SignUp = () => {
                 <input value={password} onChange={ev => setPassword(ev.target.value)} type="password" name="password" placeholder="password" className="p-2 mx-2 mt-1 mb-5" />
                 
                 {isSign === "register" ? 
-                <button onClick={signup} className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >
+                <button onClick={(ev) => {
+                    ev.preventDefault()
+                    signup()
+                }} className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >
                     Sign Up!</button> : 
-                <button onClick={login} className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >
+                <button onClick={(ev) => {
+                    ev.preventDefault()
+                    login()
+                }} className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >
                     Log In!</button>}
                 {/* <button className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >
                     {isSign === "register" ? 'Sign up!' : "Log in!"}
