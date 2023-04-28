@@ -2,7 +2,6 @@ import { useCurrentUser, login, signUp, signOut } from './lib/pocketbase';
 import { useState } from 'react';
 
 function App() {
-  const currentUser = useCurrentUser();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -20,17 +19,11 @@ function App() {
 
   return (
     <div>
-      {currentUser ? (
-        <p>
-          Signed in as {currentUser.username}
-          <button onClick={signOut}>Sign Out</button>
-        </p>
-      ) : (
         <div className="md:px-44 text-xl lg:text-3xl text-center">
          <div className=" h-screen ">
              <div className="p-5 h-1/3">
-               <p className='text-5xl md:text-7xl'>The All New Platform</p>
-               <p className='text-8xl md:text-9xl font-bold gradient'>CH@</p>
+               <div className='text-5xl md:text-7xl'>The All New Platform</div>
+               <div className='text-8xl md:text-9xl font-bold gradient'>CH@</div>
                {/* <button className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >Sign Up!</button> */}
              </div>
              <div className="p-5 h-2/3 center align-middle items-center flex flex-auto">
@@ -70,8 +63,6 @@ function App() {
            </div>
          </div>
        </div>
-        
-      )}
     </div>
   );
 }

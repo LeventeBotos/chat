@@ -1,7 +1,9 @@
 import PocketBase from 'pocketbase';
 import { useState, useEffect } from 'react';
 
-export const pb = new PocketBase(process.env.IP);
+export const pb = new PocketBase("http://192.168.68.106:8090");
+
+pb.autoCancellation(false)
 
 export const useCurrentUser = () => {
   const [currentUser, setCurrentUser] = useState(pb.authStore.model);
