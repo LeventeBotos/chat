@@ -1,7 +1,10 @@
+import { useCurrentUser } from "./lib/pocketbase"
+
+
 const SignedIn = () => {
     return (
       <div>
-        Signed in 
+        Signed in as
       </div>
     )
   }
