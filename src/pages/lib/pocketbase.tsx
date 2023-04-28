@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase';
 import { useState, useEffect } from 'react';
 
-export const pb = new PocketBase('');
+export const pb = new PocketBase(process.env.IP);
 
 export const useCurrentUser = () => {
   const [currentUser, setCurrentUser] = useState(pb.authStore.model);
