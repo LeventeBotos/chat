@@ -59,10 +59,10 @@ export const signOut = () => {
 //     currentUser.set(pb.authStore.model);
 // });
 
-// export default function pocketbase() {
-//   return (
-//     <div>
-//       Dont use this!
-//     </div>
-//   )
-// }
+export default function pocketbase() {
+  return (
+    <div>
+      Dont use this!
+    </div>
+  )
+}
