@@ -6,11 +6,12 @@ export default function Home() {
   const currentUser = useCurrentUser();
   return (
     <div>
-       {currentUser ? (
+       {/* {currentUser ? (
           <Messages />
       ) : (
         <Login />
-      )}
+      )} */}
+        <Login />
     </div>
   )
 }

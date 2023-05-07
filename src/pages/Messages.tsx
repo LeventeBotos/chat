@@ -65,29 +65,28 @@ const Messages: React.FC = () => {
   const currentUser = useCurrentUser();
 
   return (
-    <>
-      <div className="messages">
+    <div className=''>
+      <div className="">
         {messages.map((message) => (
-          <div className="msg" key={message.id}>
-            <img
-              className="avatar"
-              src={`https://avatars.dicebear.com/api/identicon/${message.expand?.user?.username}.svg`}
-              alt="avatar"
-              width="40px"
-            />
+          <div className="flex flex-row bg-slate-600 rounded-xl p-2 m-5" key={message.id}>
             <div>
-              <small>Sent by @{message.expand?.user?.username}</small>
-              <p className="msg-text">{message.text}</p>
+                <img
+                className="avatar"
+                src={`https://avatars.dicebear.com/api/identicon/${message.expand?.user?.username}.svg`}
+                alt="avatar"
+                width="40px"
+                />
             </div>
+            <div className='pl-3'>{message.text}</div>
           </div>
         ))}
       </div>
 
-      <form onSubmit={sendMessage}>
-        <input placeholder="Message" type="text" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
-        <button type="submit">Send</button>
+      <form className=' flex flex-row justify-between' onSubmit={sendMessage}>
+        <input className='' placeholder="Message" type="text" value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
+        <button className='bg-slate-600' type="submit">Send</button>
       </form>
-    </>
+    </div>
   );
 };
 

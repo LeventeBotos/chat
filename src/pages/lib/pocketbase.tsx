@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase';
 import { useState, useEffect } from 'react';
 
-export const pb = new PocketBase("http://192.168.68.106:8090");
+export const pb = new PocketBase("http://80.98.246.4:8090");
 
 pb.autoCancellation(false)
 

@@ -18,10 +18,9 @@ function App() {
   };
 
   return (
-    <div>
-        <div className="md:px-44 text-xl lg:text-3xl text-center">
-         <div className=" h-screen ">
-             <div className="p-5 h-1/3">
+    <div className='flex flex-row'>
+        <div className="md:px-44 text-xl lg:text-3xl flex text-center h-screen">
+             <div className="p-5">
                <div className='text-5xl md:text-7xl'>The All New Platform</div>
                <div className='text-8xl md:text-9xl font-bold gradient'>CH@</div>
                {/* <button className="rounded-full bg-white font-bold text-[#121212] py-5 px-10" >Sign Up!</button> */}
@@ -63,7 +62,6 @@ function App() {
            </div>
          </div>
        </div>
-    </div>
   );
 }
 
