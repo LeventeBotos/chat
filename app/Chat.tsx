@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { auth, db } from "./Firebase";
 import {
   collection,
@@ -9,18 +9,31 @@ import {
   orderBy,
   query,
   limit,
+  limitToLast,
+  endBefore,
+  getDocs,
 } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-import { Send_Flowers } from "next/font/google";
 
-export const Chat: React.FC = () => {
+export const Chat = () => {
   const dummy = useRef<HTMLDivElement | null>(null);
   const messagesRef = collection(db, "messages");
-  const q = query(messagesRef, orderBy("createdAt"), limit(50));
-  const [currentUid, setCurrentUid] = useState("");
+
+  const q = query(messagesRef, orderBy("createdAt", "asc"), limitToLast(10));
+
   const [messages] = useCollectionData(q);
 
   const [formValue, setFormValue] = useState<string>("");
+  const [currentUid, setCurrentUid] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      setCurrentUid(auth.currentUser.uid);
+    }
+    if (dummy.current) {
+      dummy.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [messages, dummy]);
 
   const sendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,13 +59,35 @@ export const Chat: React.FC = () => {
     }
   };
 
+  const loadMoreMessages = async () => {
+    if (messages && messages.length > 0) {
+      const newQuery = query(
+        messagesRef,
+        orderBy("createdAt", "asc"),
+        endBefore(messages[0].createdAt), // Use the timestamp of the first message
+        limit(20)
+      );
+
+      const newMessages = await getDocs(newQuery);
+      console.log(newMessages);
+
+      // Update the state with the newMessages if needed
+    }
+  };
+
   return (
-    <div className="flex flex-col bottom-0 ml-2 left-0 min-h-screen">
-      <div className="flex flex-grow overflow-y-auto overflow-x-clip flex-col p-3 gap-2">
+    <div className=" bg-[#1f1f1f]   flex flex-col bottom-0 left-0 h-screen">
+      <div className="flex flex-grow relative top-0 left-0 overflow-y-scroll overflow-x-clip flex-col p-3 gap-2">
+        <button
+          onClick={loadMoreMessages}
+          className="w-2/3 self-center p-2 text-center bg-[#2a2a2a] rounded-xl hover:bg-[#2f2f3f] ease-in-out duration-200"
+        >
+          Load more messages
+        </button>
         {messages &&
-          messages.map((msg) => (
+          messages.map((msg, index) => (
             <div
-              key={msg.uid}
+              key={index}
               className={`bg-lime-600  justify-evenly rounded-xl p-2 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg flex ${
                 msg.uid === currentUid
                   ? " flex-row items-end self-end"
@@ -67,11 +102,13 @@ export const Chat: React.FC = () => {
               />
             </div>
           ))}
+        <span ref={dummy} className="bg-transparent"></span>
       </div>
-      <span ref={dummy}></span>
+      <span className=" w-full z-10 bg-transparent h-32"></span>
       <form
-        className="w-full flex pb-5 flex-row relative bottom-0 right-0"
+        className="w-full flex z-20 p-0 md:p-5 pt-0 mt-0 bg-clip-padding pb-3 flex-row absolute bottom-0 left-0 right-0"
         onSubmit={sendMessage}
+        name="msg"
       >
         <input
           placeholder="Say something nice"
@@ -79,17 +116,11 @@ export const Chat: React.FC = () => {
           type="text"
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
-          className="rounded-xl w-full p-3 bg-transparent border-2 border-[#3f3f3f] rounded-r-none"
+          className="rounded-xl w-full p-3 bg-[#1f1f1f] border-2 border-[#3f3f3f] rounded-r-none"
         />
-        {/* <input
-          value={formValue}
-          onChange={(e) => setFormValue(e.target.value)}
-          placeholder="Say something nice"
-          className="w-full h-10 rounded-xl p-2"
-        /> */}
         <button
           type="submit"
-          className="md:w-1/5 lg:w-1/6  w-1/3 buttonn rounded-l-none"
+          className="md:w-1/5 lg:w-1/6 w-1/3 buttonn rounded-l-none"
           disabled={!formValue}
         >
           <div className="svg-wrapper-1">
@@ -108,11 +139,8 @@ export const Chat: React.FC = () => {
               </svg>
             </div>
           </div>
-          <span>Send</span>
+          <span className="text-xs md:text-lg">Send</span>
         </button>
-        {/* <button type="submit" className="w-1/5" disabled={!formValue}>
-          🕊️
-        </button> */}
       </form>
     </div>
   );

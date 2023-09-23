@@ -103,13 +103,24 @@ background-color: black;
 }
 
 .buttonn:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  transform: rotate(45deg) scale(1.1);
 }
 
+/* Apply additional styles for medium-sized screens and larger */
+@media (min-width: 768px) { /* Adjust the min-width as needed for your "md" breakpoint */
+  .buttonn:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+}
+.buttonn:hover span {
+  transform: translateX(0.5em);
+}
+
+@media (min-width: 768px) {
 .buttonn:hover span {
   transform: translateX(2em);
 }
-
+}
 .buttonn:active {
   transform: scale(0.95);
 }

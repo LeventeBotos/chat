@@ -6,8 +6,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Rolling-Royals",
-  description: "Rolling-Royals webshopja",
+  title: "Chat app",
+  description: "Chat",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
         {/* <Navbar />
         <div className="h-20 md:h-24" /> */}
         <div> {children}</div>
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
