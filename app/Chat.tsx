@@ -14,10 +14,12 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
-
-export const Chat = () => {
+interface ChatProps {
+  id: string;
+}
+export const Chat: React.FC<ChatProps> = ({ id }) => {
   const dummy = useRef<HTMLDivElement | null>(null);
-  const messagesRef = collection(db, "messages");
+  const messagesRef = collection(db, id);
 
   const q = query(messagesRef, orderBy("createdAt", "asc"), limitToLast(10));
 
@@ -76,7 +78,7 @@ export const Chat = () => {
   };
 
   return (
-    <div className=" bg-[#1f1f1f]   flex flex-col bottom-0 left-0 h-screen">
+    <div className=" bg-[#1f1f1f] flex flex-col bottom-0 left-0 h-screen">
       <div className="flex flex-grow relative top-0 left-0 overflow-y-scroll overflow-x-clip flex-col p-3 gap-2">
         <button
           onClick={loadMoreMessages}
@@ -142,6 +144,7 @@ export const Chat = () => {
           <span className="text-xs md:text-lg">Send</span>
         </button>
       </form>
+      <p className="text-white">{id}</p>
     </div>
   );
 };
