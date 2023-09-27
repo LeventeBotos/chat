@@ -15,7 +15,8 @@ import { randomUUID } from "crypto";
 const Choose = () => {
   const [theme, setTheme] = useState("");
   const [count, setCount] = useState(0);
-  let id: string;
+  let id = "";
+
   useEffect(() => {
     console.log(theme, count);
     async function inner() {
@@ -37,9 +38,9 @@ const Choose = () => {
 
           // Add a document to the collection
           // Check if 'theme' and 'id' have valid values
-          if (theme !== undefined && id !== undefined) {
+          if (theme) {
             await addDoc(collection(db, theme), { theme: theme, idd: id });
-            // location.replace(`/chats/${id}`)
+            location.replace(`/chats/${id}`);
           } else {
             console.error("Invalid values for theme or id:", theme, id);
           }
@@ -66,7 +67,7 @@ const Choose = () => {
       }
     }
     inner();
-  }, [theme]);
+  }, [theme, id]);
   return (
     <div className="flex p-5 gap-5 w-full flex-col h-screen justify-center items-center">
       <p className="text-xl md:text-3xl w-2/3 font-bold gradient">
@@ -77,7 +78,7 @@ const Choose = () => {
           onClick={() => {
             setTheme("testers");
           }}
-          className=" rounded-lg text-center text-6xl font-bold w-full h-32 bg-[#222222] flex flex-col justify-evenly"
+          className="hover:cursor-pointer hover:bg-[#323232] ease-in-out duration-300 rounded-lg text-center text-6xl font-bold w-full h-32 bg-[#222222] flex flex-col justify-evenly"
         >
           Test
         </div>

@@ -3,5 +3,9 @@
 import { Chat } from "../../Chat";
 
 export default function Page({ params }: { params: { slug: string } }) {
-  return <Chat id={params.slug} />;
+  return (
+    <div className="w-full overflow-x-hidden p-0 m-0">
+      <Chat id={params.slug} />{" "}
+    </div>
+  );
 }

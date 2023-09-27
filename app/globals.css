@@ -7,6 +7,10 @@
   border: 1px red solid;
 } */
 
+html {
+  background-color: #1f1f1f;
+}
+
 .gradient {
   /* background: radial-gradient(
     hsl(150 100% 60%), 

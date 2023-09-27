@@ -12,21 +12,39 @@ import {
   limitToLast,
   endBefore,
   getDocs,
+  DocumentData,
 } from "firebase/firestore";
 import { useCollectionData } from "react-firebase-hooks/firestore";
+import { randomUUID } from "crypto";
+
 interface ChatProps {
   id: string;
+  msg: string;
 }
+
 export const Chat: React.FC<ChatProps> = ({ id }) => {
+  const [numm, setNumm] = useState(1);
   const dummy = useRef<HTMLDivElement | null>(null);
   const messagesRef = collection(db, id);
 
-  const q = query(messagesRef, orderBy("createdAt", "asc"), limitToLast(10));
+  const [newMsgs, setNewMsgs] = useState<DocumentData[]>([]);
+  const [msgs, setMsgs] = useState<DocumentData[]>([]);
+  const q = query(messagesRef, orderBy("createdAt", "asc"), limitToLast(25));
 
   const [messages] = useCollectionData(q);
 
   const [formValue, setFormValue] = useState<string>("");
   const [currentUid, setCurrentUid] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (messages) {
+      setMsgs(messages.concat(newMsgs));
+    }
+    // setMsgs(newMsgs);
+    console.log(newMsgs);
+    console.log(messages);
+    console.log(msgs);
+  }, [messages, newMsgs]);
 
   useEffect(() => {
     if (auth.currentUser) {
@@ -63,33 +81,34 @@ export const Chat: React.FC<ChatProps> = ({ id }) => {
 
   const loadMoreMessages = async () => {
     if (messages && messages.length > 0) {
+      setNumm(numm + 1);
       const newQuery = query(
         messagesRef,
         orderBy("createdAt", "asc"),
         endBefore(messages[0].createdAt), // Use the timestamp of the first message
-        limit(20)
+        limit(25 * numm)
       );
 
       const newMessages = await getDocs(newQuery);
       console.log(newMessages);
-
+      setNewMsgs(newMessages.docs.map((doc) => doc.data()));
       // Update the state with the newMessages if needed
     }
   };
 
   return (
-    <div className=" bg-[#1f1f1f] flex flex-col bottom-0 left-0 h-screen">
-      <div className="flex flex-grow relative top-0 left-0 overflow-y-scroll overflow-x-clip flex-col p-3 gap-2">
+    <div className="bg-[#1f1f1f] overflow-x-hidden w-full flex flex-col bottom-0 right-0 h-screen">
+      <div className="flex flex-grow relative bottom-0 p-5 gap-2 right-0 h-screen overflow-y-scroll overflow-x-hidden flex-col w-screen">
         <button
-          onClick={loadMoreMessages}
-          className="w-2/3 self-center p-2 text-center bg-[#2a2a2a] rounded-xl hover:bg-[#2f2f3f] ease-in-out duration-200"
+          onClick={() => loadMoreMessages()}
+          className="w-2/3 self-center p-2 text-center bg-[#2a2a2a] text-white rounded-xl hover:bg-[#2f2f3f] ease-in-out duration-200"
         >
           Load more messages
         </button>
-        {messages &&
-          messages.map((msg, index) => (
+        {msgs &&
+          msgs.map((msg, index) => (
             <div
-              key={index}
+              key={crypto.randomUUID()}
               className={`bg-lime-600  justify-evenly rounded-xl p-2 max-w-xs md:max-w-sm lg:max-w-md xl:max-w-lg flex ${
                 msg.uid === currentUid
                   ? " flex-row items-end self-end"
@@ -106,7 +125,7 @@ export const Chat: React.FC<ChatProps> = ({ id }) => {
           ))}
         <span ref={dummy} className="bg-transparent"></span>
       </div>
-      <span className=" w-full z-10 bg-transparent h-32"></span>
+      <span className="w-full z-10 bg-transparent h-32"></span>
       <form
         className="w-full flex z-20 p-0 md:p-5 pt-0 mt-0 bg-clip-padding pb-3 flex-row absolute bottom-0 left-0 right-0"
         onSubmit={sendMessage}
@@ -118,7 +137,7 @@ export const Chat: React.FC<ChatProps> = ({ id }) => {
           type="text"
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
-          className="rounded-xl w-full p-3 bg-[#1f1f1f] border-2 border-[#3f3f3f] rounded-r-none"
+          className="rounded-xl w-full p-3 bg-[#1f1f1f] text-white border-2 border-[#3f3f3f] rounded-r-none"
         />
         <button
           type="submit"
@@ -144,7 +163,7 @@ export const Chat: React.FC<ChatProps> = ({ id }) => {
           <span className="text-xs md:text-lg">Send</span>
         </button>
       </form>
-      <p className="text-white">{id}</p>
+      {/* <p className="text-white">{id}</p> */}
     </div>
   );
 };

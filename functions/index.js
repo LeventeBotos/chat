@@ -1,67 +1,67 @@
-const { onRequest } = require("firebase-functions/v2/https");
-const { initializeApp } = require("firebase-admin/app");
-const {
-  getFirestore,
-  addDoc,
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-} = require("firebase-admin/firestore");
-const uuid = require("uuid");
+// const { onRequest } = require("firebase-functions/v2/https");
+// const { initializeApp } = require("firebase-admin/app");
+// const {
+//   getFirestore,
+//   addDoc,
+//   collection,
+//   getDocs,
+//   deleteDoc,
+//   doc,
+// } = require("firebase-admin/firestore");
+// const uuid = require("uuid");
 
-initializeApp();
-const db = getFirestore();
+// initializeApp();
+// const db = getFirestore();
 
-exports.test = onRequest(async (req, res) => {
-  try {
-    const { theme } = req.query;
+// exports.test = onRequest(async (req, res) => {
+//   try {
+//     const { theme } = req.query;
 
-    if (!theme) {
-      return res
-        .status(400)
-        .json({ error: "Bad Request", msg: "Missing 'theme' parameter" });
-    }
+//     if (!theme) {
+//       return res
+//         .status(400)
+//         .json({ error: "Bad Request", msg: "Missing 'theme' parameter" });
+//     }
 
-    const collectionRef = db
-      .collection(theme)
-      .get()
-      .then(async (querySnapshot) => {
-        let docs = querySnapshot.docs;
-        if (querySnapshot.size === 0) {
-          const id = uuid.v4();
-          await addDoc(collectionRef, { id });
-          res.json({ result: "Document added", id, theme });
-        } else {
-          const docSnapshot = querySnapshot.docs[0];
-          const id = docSnapshot.id;
+//     const collectionRef = db
+//       .collection(theme)
+//       .get()
+//       .then(async (querySnapshot) => {
+//         let docs = querySnapshot.docs;
+//         if (querySnapshot.size === 0) {
+//           const id = uuid.v4();
+//           await addDoc(collectionRef, { id });
+//           res.json({ result: "Document added", id, theme });
+//         } else {
+//           const docSnapshot = querySnapshot.docs[0];
+//           const id = docSnapshot.id;
 
-          await deleteDoc(doc(db, theme, id));
+//           await deleteDoc(doc(db, theme, id));
 
-          res.json({ result: "Document deleted", id, theme });
-        }
-      });
-    // const querySnapshot = await getDocs(collectionRef);
+//           res.json({ result: "Document deleted", id, theme });
+//         }
+//       });
+//     // const querySnapshot = await getDocs(collectionRef);
 
-    if (querySnapshot.size === 0) {
-      const id = uuid.v4();
-      await addDoc(collectionRef, { id });
-      res.json({ result: "Document added", id, theme });
-    } else {
-      const docSnapshot = querySnapshot.docs[0];
-      const id = docSnapshot.id;
+//     if (querySnapshot.size === 0) {
+//       const id = uuid.v4();
+//       await addDoc(collectionRef, { id });
+//       res.json({ result: "Document added", id, theme });
+//     } else {
+//       const docSnapshot = querySnapshot.docs[0];
+//       const id = docSnapshot.id;
 
-      await deleteDoc(doc(db, theme, id));
+//       await deleteDoc(doc(db, theme, id));
 
-      res.json({ result: "Document deleted", id, theme });
-    }
-  } catch (error) {
-    console.error("Error:", error);
-    res
-      .status(500)
-      .json({ error: "Internal Server Error", msg: error.message });
-  }
-});
+//       res.json({ result: "Document deleted", id, theme });
+//     }
+//   } catch (error) {
+//     console.error("Error:", error);
+//     res
+//       .status(500)
+//       .json({ error: "Internal Server Error", msg: error.message });
+//   }
+// });
 
 // const { onRequest } = require("firebase-functions/v2/https");
 // const uuid = require("uuid");
