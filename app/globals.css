@@ -34,8 +34,7 @@ body {
   scroll-behavior: smooth;
 }
 
-
-.gradLink {
+a {
   background: linear-gradient(
       to right,
       hsl(150, 100%, 60%),
@@ -53,7 +52,7 @@ body {
   transition: background-size 400ms;
 }
 
-.gradLink:hover {
+a:hover:not(.nothover) {
   background-size: 0 3px, 100% 3px;
 }
 

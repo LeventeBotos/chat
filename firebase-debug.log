@@ -1,0 +1,433 @@
+[debug] [2023-10-11T07:36:01.277Z] ----------------------------------------------------------------------
+[debug] [2023-10-11T07:36:01.280Z] Command:       /Users/leventebotos/.nvm/versions/node/v20.3.1/bin/node /Users/leventebotos/.bun/bin/firebase deploy
+[debug] [2023-10-11T07:36:01.280Z] CLI Version:   12.5.4
+[debug] [2023-10-11T07:36:01.281Z] Platform:      darwin
+[debug] [2023-10-11T07:36:01.281Z] Node Version:  v20.3.1
+[debug] [2023-10-11T07:36:01.281Z] Time:          Wed Oct 11 2023 09:36:01 GMT+0200 (GMT+02:00)
+[debug] [2023-10-11T07:36:01.281Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-11T07:36:01.315Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-11T07:36:01.315Z] > authorizing via signed-in user (botos.levente2007@gmail.com)
+[debug] [2023-10-11T07:36:01.315Z] [iam] checking project chatapplevente for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-11T07:36:01.315Z] > refreshing access token with scopes: []
+[debug] [2023-10-11T07:36:01.316Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-10-11T07:36:01.316Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-10-11T07:36:01.635Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-10-11T07:36:01.636Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-10-11T07:36:01.655Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatapplevente:testIamPermissions [none]
+[debug] [2023-10-11T07:36:01.655Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatapplevente:testIamPermissions x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:36:01.655Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatapplevente:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-11T07:36:02.587Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatapplevente:testIamPermissions 200
+[debug] [2023-10-11T07:36:02.588Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/chatapplevente:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-11T07:36:02.588Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/chatapplevente/serviceAccounts/chatapplevente@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-10-11T07:36:02.588Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatapplevente/serviceAccounts/chatapplevente@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-10-11T07:36:04.443Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/chatapplevente/serviceAccounts/chatapplevente@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-10-11T07:36:04.443Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/chatapplevente/serviceAccounts/chatapplevente@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-10-11T07:36:04.445Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente [none]
+[debug] [2023-10-11T07:36:04.887Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente 200
+[debug] [2023-10-11T07:36:04.888Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente {"projectId":"chatapplevente","projectNumber":"255039266622","displayName":"chat","name":"projects/chatapplevente","resources":{"hostingSite":"chatapplevente"},"state":"ACTIVE","etag":"1_881a3652-888d-4a6e-a93b-96c8c6c19dc3"}
+[debug] [2023-10-11T07:36:05.871Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/chatapplevente/sites pageToken=&pageSize=10
+[debug] [2023-10-11T07:36:07.284Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/chatapplevente/sites 200
+[debug] [2023-10-11T07:36:07.284Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/chatapplevente/sites {"sites":[{"name":"projects/chatapplevente/sites/chatapplevente","defaultUrl":"https://chatapplevente.web.app","appId":"1:255039266622:web:d6a99021fb6b70d8b8d66f","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-11T07:36:07.285Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:255039266622:web:d6a99021fb6b70d8b8d66f/config [none]
+[debug] [2023-10-11T07:36:08.094Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:255039266622:web:d6a99021fb6b70d8b8d66f/config 200
+[debug] [2023-10-11T07:36:08.095Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:255039266622:web:d6a99021fb6b70d8b8d66f/config {"projectId":"chatapplevente","appId":"1:255039266622:web:d6a99021fb6b70d8b8d66f","storageBucket":"chatapplevente.appspot.com","apiKey":"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE","authDomain":"chatapplevente.firebaseapp.com","messagingSenderId":"255039266622"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] - warn Invalid next.config.js options detected: 
+
+[info] - warn     The root value has an unexpected property, exportTrailingSlash, which is not in the list of allowed properties (amp, analyticsId, assetPrefix, basePath, cleanDistDir, compiler, compress, configOrigin, crossOrigin, devIndicators, distDir, env, eslint, excludeDefaultMomentLocales, experimental, exportPathMap, generateBuildId, generateEtags, headers, httpAgentOptions, i18n, images, modularizeImports, onDemandEntries, optimizeFonts, output, outputFileTracing, pageExtensions, poweredByHeader, productionBrowserSourceMaps, publicRuntimeConfig, reactStrictMode, redirects, rewrites, sassOptions, serverRuntimeConfig, skipMiddlewareUrlNormalize, skipTrailingSlashRedirect, staticPageGenerationTimeout, swcMinify, target, trailingSlash, transpilePackages, typescript, useFileSystemPublicRoutes, webpack).
+- warn See more info here: https://nextjs.org/docs/messages/invalid-next-config
+
+[info] Warning: The "exportTrailingSlash" option has been renamed to "trailingSlash". Please update your next.config.js.
+
+[info] - info Creating an optimized production build...
+
+[info] - warn Compiled with warnings
+
+./node_modules/node-fetch/lib/index.js
+Module not found: Can't resolve 'encoding' in '/Users/leventebotos/chat/node_modules/node-fetch/lib'
+
+Import trace for requested module:
+./node_modules/node-fetch/lib/index.js
+./node_modules/@firebase/auth/dist/node-esm/index.js
+./node_modules/firebase/auth/dist/index.mjs
+./app/Firebase.tsx
+./app/page.tsx
+
+[info] 
+
+[info] - info Linting and checking validity of types...
+
+[info] 
+./app/Chat.tsx
+128:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/Choose.tsx
+35:13  Warning: Assignments to the 'id' variable from inside React Hook useEffect will be lost after each render. To preserve the value over time, store it in a useRef Hook and keep the mutable value in the '.current' property. Otherwise, you can move this variable directly inside useEffect.  react-hooks/exhaustive-deps
+
+./app/Navbar.tsx
+15:3  Warning: React Hook useEffect contains a call to 'setCurrentUserImg'. Without a list of dependencies, this can lead to an infinite chain of updates. To fix this, pass [] as a second argument to the useEffect Hook.  react-hooks/exhaustive-deps
+29:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+44:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info] - info Collecting page data...
+
+[info] - info Generating static pages (0/4)
+
+[info] - info Generating static pages (1/4)
+
+[info] - info Generating static pages (2/4)
+
+[info] - info Generating static pages (3/4)
+
+[info] - info Generating static pages (4/4)
+
+[info] - info Finalizing page optimization...
+
+[info] 
+
+[info] Route (app)                                Size     First Load JS
+┌ ○ /                                      0 B                0 B
+├ ○ /chats                                 249 B           187 kB
+└ λ /chats/[slug]                          336 B           187 kB
++ First Load JS shared by all              77.7 kB
+  ├ chunks/769-44143f89a9add149.js         25.2 kB
+  ├ chunks/bce60fc1-b7f0fbba86d0a929.js    50.5 kB
+  ├ chunks/main-app-fa9e14246906fddd.js    217 B
+  └ chunks/webpack-191a1c3deec0ff7e.js     1.75 kB
+
+Route (pages)                              Size     First Load JS
+─ ○ /404                                   182 B          74.9 kB
++ First Load JS shared by all              74.7 kB
+  ├ chunks/framework-8883d1e9be70c3da.js   45 kB
+  ├ chunks/main-e177e55fb18f454c.js        27.7 kB
+  ├ chunks/pages/_app-998b8fceeadee23e.js  195 B
+  └ chunks/webpack-191a1c3deec0ff7e.js     1.75 kB
+
+
+[info] λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static component /chats/[slug]/page
+[info] 
+[debug] [2023-10-11T07:36:53.555Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "europe-west1"
+      },
+      "site": "chatapplevente",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrchatapplevente",
+            "region": "europe-west1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "**/*.[jt]s",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "__FIREBASE_DEFAULTS__=eyJjb25maWciOnsicHJvamVjdElkIjoiY2hhdGFwcGxldmVudGUiLCJhcHBJZCI6IjE6MjU1MDM5MjY2NjIyOndlYjpkNmE5OTAyMWZiNmI3MGQ4YjhkNjZmIiwic3RvcmFnZUJ1Y2tldCI6ImNoYXRhcHBsZXZlbnRlLmFwcHNwb3QuY29tIiwiYXBpS2V5IjoiQUl6YVN5QUlRV2pNMDk2V2NqWklUeng5VFNPNVpKd0VwekVQa1lFIiwiYXV0aERvbWFpbiI6ImNoYXRhcHBsZXZlbnRlLmZpcmViYXNlYXBwLmNvbSIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiMjU1MDM5MjY2NjIyIn0sIl9hdXRoVG9rZW5TeW5jVVJMIjoiL19fc2Vzc2lvbiJ9; SameSite=Strict; Expires=2025-09-04T18:16:53.555Z; Path=/;"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "trailingSlash": true,
+      "public": ".firebase/chatapplevente/hosting",
+      "webFramework": "next_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint"
+      ]
+    },
+    {
+      "source": ".firebase/chatapplevente/functions",
+      "codebase": "firebase-frameworks-chatapplevente"
+    }
+  ]
+}
+[info] 
+[info] === Deploying to 'chatapplevente'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script. 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2023-10-11T07:36:54.421Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/chatapplevente:test [none]
+[debug] [2023-10-11T07:36:54.421Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/chatapplevente:test [omitted]
+[debug] [2023-10-11T07:36:55.480Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/chatapplevente:test 200
+[debug] [2023-10-11T07:36:55.480Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/chatapplevente:test {}
+[info] ✔  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2023-10-11T07:36:55.482Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente [none]
+[debug] [2023-10-11T07:36:56.095Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente 200
+[debug] [2023-10-11T07:36:56.096Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente {"projectId":"chatapplevente","projectNumber":"255039266622","displayName":"chat","name":"projects/chatapplevente","resources":{"hostingSite":"chatapplevente"},"state":"ACTIVE","etag":"1_881a3652-888d-4a6e-a93b-96c8c6c19dc3"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: preparing codebase firebase-frameworks-chatapplevente for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-10-11T07:36:56.099Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-10-11T07:36:56.099Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:36:56.102Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-10-11T07:36:56.102Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:36:56.104Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudbuild.googleapis.com [none]
+[debug] [2023-10-11T07:36:56.104Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudbuild.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:36:56.105Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/artifactregistry.googleapis.com [none]
+[debug] [2023-10-11T07:36:56.106Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/artifactregistry.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:36:57.250Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/runtimeconfig.googleapis.com 200
+[debug] [2023-10-11T07:36:57.250Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-10-11T07:36:57.254Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/artifactregistry.googleapis.com 200
+[debug] [2023-10-11T07:36:57.254Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-10-11T07:36:57.276Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudbuild.googleapis.com 200
+[debug] [2023-10-11T07:36:57.277Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-10-11T07:36:57.278Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudfunctions.googleapis.com 200
+[debug] [2023-10-11T07:36:57.278Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-10-11T07:36:57.279Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente/adminSdkConfig [none]
+[debug] [2023-10-11T07:36:57.742Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente/adminSdkConfig 200
+[debug] [2023-10-11T07:36:57.743Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente/adminSdkConfig {"projectId":"chatapplevente","storageBucket":"chatapplevente.appspot.com"}
+[debug] [2023-10-11T07:36:57.744Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatapplevente/configs [none]
+[debug] [2023-10-11T07:36:58.241Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatapplevente/configs 200
+[debug] [2023-10-11T07:36:58.242Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/chatapplevente/configs {}
+[debug] [2023-10-11T07:36:58.244Z] Validating nodejs source
+[debug] [2023-10-11T07:36:58.722Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^10.4.0",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1",
+    "next": "^13.5.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2023-10-11T07:36:58.722Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2023-10-11T07:36:58.722Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-10-11T07:36:58.728Z] Found firebase-functions binary at '/Users/leventebotos/chat/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8435
+
+[debug] [2023-10-11T07:36:58.853Z] Got response from /__/functions.yaml {"endpoints":{},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[debug] [2023-10-11T07:37:03.864Z] Validating nodejs source
+[debug] [2023-10-11T07:37:04.341Z] > [functions] package.json contents: {
+  "name": "chat",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "18.16.1",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "dotenv": "^16.0.3",
+    "eslint": "8.39.0",
+    "firebase": "latest",
+    "next": "13.4.6",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-firebase-hooks": "^5.1.1",
+    "react-icons": "^4.11.0",
+    "typescript": "5.0.4",
+    "firebase-frameworks": "^0.10.4",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "20"
+  }
+}
+[debug] [2023-10-11T07:37:04.341Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase firebase-frameworks-chatapplevente to determine what to deploy 
+[debug] [2023-10-11T07:37:04.342Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-10-11T07:37:04.343Z] Found firebase-functions binary at '/Users/leventebotos/chat/.firebase/chatapplevente/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8693
+
+[debug] [2023-10-11T07:37:04.554Z] Got response from /__/functions.yaml {"endpoints":{"ssrchatapplevente":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrchatapplevente"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase/chatapplevente/functions directory for uploading... 
+[info] i  functions: packaged /Users/leventebotos/chat/.firebase/chatapplevente/functions (149.98 MB) for uploading 
+[debug] [2023-10-11T07:37:14.543Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/chatapplevente/locations/-/functions [none]
+[debug] [2023-10-11T07:37:15.258Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/chatapplevente/locations/-/functions 200
+[debug] [2023-10-11T07:37:15.259Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/chatapplevente/locations/-/functions {}
+[debug] [2023-10-11T07:37:15.260Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-10-11T07:37:16.307Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/-/functions 200
+[debug] [2023-10-11T07:37:16.308Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/-/functions {"functions":[{"name":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","buildConfig":{"build":"projects/255039266622/locations/europe-west1/builds/d68fdbef-cfee-4364-9858-9636bdd77377","runtime":"nodejs20","entryPoint":"ssrchatapplevente","source":{"storageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1696702881638945"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1696702881638945"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"chatapplevente\",\"appId\":\"1:255039266622:web:d6a99021fb6b70d8b8d66f\",\"storageBucket\":\"chatapplevente.appspot.com\",\"apiKey\":\"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE\",\"authDomain\":\"chatapplevente.firebaseapp.com\",\"messagingSenderId\":\"255039266622\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"chatapplevente\",\"storageBucket\":\"chatapplevente.appspot.com\"}","GCLOUD_PROJECT":"chatapplevente","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrchatapplevente-mc5iutjkua-ew.a.run.app","serviceAccountEmail":"255039266622-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrchatapplevente-00010-hak","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2023-10-07T18:25:50.585425647Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-chatapplevente","firebase-functions-hash":"50accde2dff81d4f0d2141bd462eaf88c3734dee"},"environment":"GEN_2","url":"https://europe-west1-chatapplevente.cloudfunctions.net/ssrchatapplevente"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-10-11T07:37:16.314Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/run.googleapis.com [none]
+[debug] [2023-10-11T07:37:16.314Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/run.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:37:16.317Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/eventarc.googleapis.com [none]
+[debug] [2023-10-11T07:37:16.317Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/eventarc.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:37:16.318Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/pubsub.googleapis.com [none]
+[debug] [2023-10-11T07:37:16.318Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/pubsub.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:37:16.320Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/storage.googleapis.com [none]
+[debug] [2023-10-11T07:37:16.320Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/storage.googleapis.com x-goog-quota-user=projects/chatapplevente
+[debug] [2023-10-11T07:37:17.360Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/pubsub.googleapis.com 200
+[debug] [2023-10-11T07:37:17.361Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-10-11T07:37:17.363Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/eventarc.googleapis.com 200
+[debug] [2023-10-11T07:37:17.363Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-10-11T07:37:17.364Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/storage.googleapis.com 200
+[debug] [2023-10-11T07:37:17.364Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-10-11T07:37:17.366Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/run.googleapis.com 200
+[debug] [2023-10-11T07:37:17.366Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/chatapplevente/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-10-11T07:37:17.367Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/255039266622/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-11T07:37:17.368Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/255039266622/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-11T07:37:18.580Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/255039266622/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-11T07:37:18.581Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/255039266622/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-255039266622@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"103567548522950380070"}}
+[debug] [2023-10-11T07:37:18.750Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/255039266622/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-11T07:37:18.751Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/255039266622/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-255039266622@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"114659518147865254619"}}
+[debug] [2023-10-11T07:37:18.756Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente [none]
+[debug] [2023-10-11T07:37:19.183Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente 200
+[debug] [2023-10-11T07:37:19.184Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/chatapplevente {"projectId":"chatapplevente","projectNumber":"255039266622","displayName":"chat","name":"projects/chatapplevente","resources":{"hostingSite":"chatapplevente"},"state":"ACTIVE","etag":"1_881a3652-888d-4a6e-a93b-96c8c6c19dc3"}
+[debug] [2023-10-11T07:37:19.190Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chatapplevente/versions [none]
+[debug] [2023-10-11T07:37:19.190Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chatapplevente/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-10-11T07:37:20.480Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chatapplevente/versions 200
+[debug] [2023-10-11T07:37:20.480Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/chatapplevente/versions {"name":"projects/255039266622/sites/chatapplevente/versions/6ed65aa3bd33bd36","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[info] i  firestore: deploying indexes... 
+[debug] [2023-10-11T07:37:20.483Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases pageSize=10&pageToken=
+[debug] [2023-10-11T07:37:20.486Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatapplevente/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2023-10-11T07:37:20.916Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatapplevente/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2023-10-11T07:37:20.916Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatapplevente/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2023-10-11T07:37:20.917Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/chatapplevente/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2023-10-11T07:37:21.067Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/chatapplevente/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2023-10-11T07:37:21.069Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/chatapplevente/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/chatapplevente/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] ✔  firestore: deployed indexes in firestore.indexes.json successfully for (default) database 
+[debug] [2023-10-11T07:37:21.377Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases 200
+[debug] [2023-10-11T07:37:21.377Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases {"releases":[{"name":"projects/chatapplevente/releases/cloud.firestore","rulesetName":"projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094","createTime":"2023-09-15T13:40:54.705643Z","updateTime":"2023-10-07T18:21:20.184789Z"}]}
+[debug] [2023-10-11T07:37:21.378Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094 [none]
+[debug] [2023-10-11T07:37:22.104Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094 200
+[debug] [2023-10-11T07:37:22.104Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094 [omitted]
+[info] i  firestore: latest version of firestore.rules already up to date, skipping upload... 
+[debug] [2023-10-11T07:37:22.108Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions:generateUploadUrl [none]
+[debug] [2023-10-11T07:37:22.432Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions:generateUploadUrl 200
+[debug] [2023-10-11T07:37:22.432Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-255039266622-europe-west1/218a496c-13bd-4385-b4e4-fb2c7c153271.zip?GoogleAccessId=service-255039266622@gcf-admin-robot.iam.gserviceaccount.com&Expires=1697011642&Signature=r0G8trk6%2BdIOeP4IgfP9GlqBTeyzLHVTqFvCJLuBzndVcW9Fej%2Fcs9IsU7%2F4rBbigjfybyCkfqaFcwuRxTXtsV%2BozitH%2Btj7KUy7MzDECYLVkplS1%2BgPIM6BPLrxvBm15AmgplUeO9ZrWDoAHfdvnyZ33EIhtVdrZkolOi1vaDdwaf4r7vaJco6zv7nwwht9GgE537sshc%2BOJ76ABVW%2BYX5Fv5P5AOwyGv3%2F%2FOViqZz2H9sSksor3HGjoKXKGCb5I2qDA68RcVP9W7jYs9eU8tWOna8VTqqVPljAp%2BDQKm0cVGQ3yZdygd3KCg6gJ7TAHZq8A3JCUCdlTmPMj4DVlg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-255039266622-europe-west1","object":"218a496c-13bd-4385-b4e4-fb2c7c153271.zip"}}
+[debug] [2023-10-11T07:37:22.435Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-255039266622-europe-west1/218a496c-13bd-4385-b4e4-fb2c7c153271.zip GoogleAccessId=service-255039266622%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1697011642&Signature=r0G8trk6%2BdIOeP4IgfP9GlqBTeyzLHVTqFvCJLuBzndVcW9Fej%2Fcs9IsU7%2F4rBbigjfybyCkfqaFcwuRxTXtsV%2BozitH%2Btj7KUy7MzDECYLVkplS1%2BgPIM6BPLrxvBm15AmgplUeO9ZrWDoAHfdvnyZ33EIhtVdrZkolOi1vaDdwaf4r7vaJco6zv7nwwht9GgE537sshc%2BOJ76ABVW%2BYX5Fv5P5AOwyGv3%2F%2FOViqZz2H9sSksor3HGjoKXKGCb5I2qDA68RcVP9W7jYs9eU8tWOna8VTqqVPljAp%2BDQKm0cVGQ3yZdygd3KCg6gJ7TAHZq8A3JCUCdlTmPMj4DVlg%3D%3D
+[debug] [2023-10-11T07:37:22.435Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-255039266622-europe-west1/218a496c-13bd-4385-b4e4-fb2c7c153271.zip [stream]
+[debug] [2023-10-11T07:39:38.096Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-255039266622-europe-west1/218a496c-13bd-4385-b4e4-fb2c7c153271.zip 200
+[debug] [2023-10-11T07:39:38.097Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-255039266622-europe-west1/218a496c-13bd-4385-b4e4-fb2c7c153271.zip [omitted]
+[info] ✔  functions: .firebase/chatapplevente/functions folder uploaded successfully 
+[info] i  hosting[chatapplevente]: beginning deploy... 
+[info] i  hosting[chatapplevente]: found 36 files in .firebase/chatapplevente/hosting 
+[debug] [2023-10-11T07:39:38.123Z] [hosting] uploading with 200 concurrency
+[debug] [2023-10-11T07:39:38.156Z] [hosting] hash cache [LmZpcmViYXNlL2NoYXRhcHBsZXZlbnRlL2hvc3Rpbmc] stored for 36 files
+[debug] [2023-10-11T07:39:38.156Z] [hosting][hash queue][FINAL] {"max":25,"min":15,"avg":17.694444444444443,"active":0,"complete":36,"success":36,"errored":0,"retried":0,"total":36,"elapsed":30}
+[debug] [2023-10-11T07:39:38.156Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/255039266622/sites/chatapplevente/versions/6ed65aa3bd33bd36:populateFiles [none]
+[debug] [2023-10-11T07:39:38.156Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/255039266622/sites/chatapplevente/versions/6ed65aa3bd33bd36:populateFiles {"files":{"/next.svg":"33c5c6ad1d08bb69d8026289530e377b4d6e2a96f24562e209fd1e1e9ccee64a","/404.html":"06f2856557dbf61d57b2f5516d3846cd19649fddf6159f74e7a0a958af769e8a","/vercel.svg":"4b9c0f01017bb87197f2ae0bd9717239fadf854131b34cce7b0f74ff6d513a4b","/chats.html":"54fb0a16dba9ccbfa42e8cb2f51e0c394c061134b29e98ab8bb7a1970fe49ca7","/index.html":"be9e30bbc85df21cf444fa9098995b84613e9aa72dbd050d4dac78e0629e6e26","/_next/static/chunks/7c806026-b303aba24243b77c.js":"d11ae375d6fb75bb04e01ce56d7651c64267656efcea7b740b029f5b66ea9ca2","/_next/static/chunks/b1f2d8ec-bc2fbf80c68800ef.js":"65994e9266ff45f84be3d05b9fd5c1cb4c9f02af9fab78b54ce54ffb2b7a0fe7","/_next/static/chunks/main-app-fa9e14246906fddd.js":"fda4c774a708d19201c5dedbcd0f0005414da3eb1815fdfcf6799d0aee271a4d","/_next/static/chunks/21-50bc691f40d97547.js":"80940e01106c00a6732526e42a4e0367b3501bfdb6fc22e25a848afc37e088b2","/favicon.ico":"04614fc32690cb60b39e472119b7f7aa91d88eaeb8511a7489f8cbe1552e6e59","/_next/static/chunks/app/layout-dd5b03204cb7eefd.js":"175a6e138b54ee9b8a8a83644a232361bbcb4750a8211746130f2979e2942d29","/_next/static/chunks/webpack-191a1c3deec0ff7e.js":"88a5a4405c0d20d56050aea45b6e269adfb936eb78ffd27f83e27ecf53926d17","/_next/static/chunks/app/page-47ec4c2dca953b6f.js":"c1f9b694b2953f12177bd665abfc180a816c2992aedb3b517a571570e7764b70","/_next/static/chunks/app/chats/[slug]/page-0677c182ceec0388.js":"f2d0d0253a9885b93f9d9d67bee988dd298789d2e6b98a59a8a72df77f132c42","/_next/static/chunks/app/chats/page-9942301c752db02b.js":"19497e2452fe44a1a6935459957721cfc3ff4c70f72aeff553c9ead3e43409df","/_next/static/chunks/pages/_app-998b8fceeadee23e.js":"3cd94280ae307e65db86efc1e14da5bf86f74ec8f1313f5adbb64eb42bbac542","/_next/static/css/f8d0202b2cde090e.css":"36b33527c28eb338d408a28adea458d3ac71ef2d8bda9633ba16151a390909ec","/_next/static/fR-j0iXgZPEDbbaQLJi1s/_buildManifest.js":"7a70d1317dc347732970f96041c6c6f98151f7535bab104b69ca056523094276","/_next/static/css/4a708c88521fba4e.css":"ddcce933999a5271335fb6658489daef612b247638473f4e18b52a8cdda81000","/_next/static/fR-j0iXgZPEDbbaQLJi1s/_ssgManifest.js":"02dbc1aeab6ef0a6ff2ff9a1643158cf9bb38929945eaa343a3627dee9ba6778","/_next/static/chunks/pages/_error-e8b35f8a0cf92802.js":"0ffad474927fee85866907735f87d8aea897a26d8a0d8f01cb3c06cc9be287b6","/_next/static/media/05a31a2ca4975f99-s.woff2":"6efe3c10c8cf8d8db389af700f8e6dd56ef3734c59159ae26bea5e9f3b05d919","/_next/static/media/fd4db3eb5472fc27-s.woff2":"b62a5c48aa2a5c1f795d9f0e040eb59387eb7527523ebf1a2a37a0b80ed8afda","/_next/static/media/513657b02c5c193f-s.woff2":"8b5a45c3bd722485651de5e4530c0c65ef99b9aa3aebc54b079c9bae0a7def02","/_next/static/media/51ed15f9841b9f9d-s.woff2":"2927be27379e00d478cc64e43c4adeecf5ed5d55297881374fcf2990cb0ddf3c","/_next/static/media/ec159349637c90ad-s.woff2":"4a49c759ac3815adbc833e94127861326c24ded349fe158c813e6f47ea5d4d3c","/_next/static/chunks/8f661559-4eeb1cc8a678b775.js":"aeb6f935043079b73dfcfe0f82668ec97312c7b0c17f43aa62322491a56f5ae3","/_next/static/chunks/769-44143f89a9add149.js":"0347fa65028145596d696ee23c9c1cf811b0dabecfb37a011642b162b5436599","/_next/static/chunks/99-2cd4a8f5dd10ae3a.js":"1e0766a71ae89aa09c4bae3a4866175242537bc7eddccc590e0fdf4ad2c24fd8","/_next/static/media/c9a5bc6a7c948fb0-s.p.woff2":"8c00c2079fc090e1a9585b9331fc39921d2ce6223064bf5cf0b0758946d8ce92","/_next/static/chunks/main-e177e55fb18f454c.js":"014dc0c3a046ea865d7e2bad7325026b9e89f257db31a8e1f5fdf278323f1c60","/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js":"76f0b40a22fd1d40b34e6072089550d8573c7207c510dc41038d823c7fa3c369","/_next/static/media/d6b16ce4a6175f26-s.woff2":"fae9474624ed0c86860a0b0e7e11872c3c41eb450929ab9461102e4993688aa9","/_next/static/chunks/bce60fc1-b7f0fbba86d0a929.js":"ac2b500eef3f44e90afb026afa199dfbd10143d1b5dddd6474b15e9caab9b576","/_next/static/chunks/framework-8883d1e9be70c3da.js":"740a9917902c50b922f543c2c4f39e60359ba656dfa9cb709d20c8ad7c43fd24","/_next/static/chunks/cacdea1d-bb718c18784eee64.js":"f47005dd41fd3a3164b8b7e83e94a039e84f96a0c46ace73e2e341d0da6fb570"}}
+[debug] [2023-10-11T07:39:40.022Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/255039266622/sites/chatapplevente/versions/6ed65aa3bd33bd36:populateFiles 200
+[debug] [2023-10-11T07:39:40.023Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/255039266622/sites/chatapplevente/versions/6ed65aa3bd33bd36:populateFiles {"uploadRequiredHashes":["54fb0a16dba9ccbfa42e8cb2f51e0c394c061134b29e98ab8bb7a1970fe49ca7","be9e30bbc85df21cf444fa9098995b84613e9aa72dbd050d4dac78e0629e6e26","c1f9b694b2953f12177bd665abfc180a816c2992aedb3b517a571570e7764b70","06f2856557dbf61d57b2f5516d3846cd19649fddf6159f74e7a0a958af769e8a"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files"}
+[debug] [2023-10-11T07:39:40.025Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/54fb0a16dba9ccbfa42e8cb2f51e0c394c061134b29e98ab8bb7a1970fe49ca7 [none]
+[debug] [2023-10-11T07:39:40.025Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/54fb0a16dba9ccbfa42e8cb2f51e0c394c061134b29e98ab8bb7a1970fe49ca7 [stream]
+[debug] [2023-10-11T07:39:40.028Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/be9e30bbc85df21cf444fa9098995b84613e9aa72dbd050d4dac78e0629e6e26 [none]
+[debug] [2023-10-11T07:39:40.028Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/be9e30bbc85df21cf444fa9098995b84613e9aa72dbd050d4dac78e0629e6e26 [stream]
+[debug] [2023-10-11T07:39:40.030Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/c1f9b694b2953f12177bd665abfc180a816c2992aedb3b517a571570e7764b70 [none]
+[debug] [2023-10-11T07:39:40.030Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/c1f9b694b2953f12177bd665abfc180a816c2992aedb3b517a571570e7764b70 [stream]
+[debug] [2023-10-11T07:39:40.031Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/06f2856557dbf61d57b2f5516d3846cd19649fddf6159f74e7a0a958af769e8a [none]
+[debug] [2023-10-11T07:39:40.031Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/06f2856557dbf61d57b2f5516d3846cd19649fddf6159f74e7a0a958af769e8a [stream]
+[debug] [2023-10-11T07:39:40.033Z] [hosting][populate queue][FINAL] {"max":1870,"min":1870,"avg":1870,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1879}
+[debug] [2023-10-11T07:39:40.033Z] [hosting] uploads queued: 4
+[debug] [2023-10-11T07:39:40.997Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/be9e30bbc85df21cf444fa9098995b84613e9aa72dbd050d4dac78e0629e6e26 200
+[debug] [2023-10-11T07:39:40.997Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/be9e30bbc85df21cf444fa9098995b84613e9aa72dbd050d4dac78e0629e6e26 [stream]
+[debug] [2023-10-11T07:39:41.142Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/54fb0a16dba9ccbfa42e8cb2f51e0c394c061134b29e98ab8bb7a1970fe49ca7 200
+[debug] [2023-10-11T07:39:41.142Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/54fb0a16dba9ccbfa42e8cb2f51e0c394c061134b29e98ab8bb7a1970fe49ca7 [stream]
+[debug] [2023-10-11T07:39:41.257Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/c1f9b694b2953f12177bd665abfc180a816c2992aedb3b517a571570e7764b70 200
+[debug] [2023-10-11T07:39:41.258Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/c1f9b694b2953f12177bd665abfc180a816c2992aedb3b517a571570e7764b70 [stream]
+[debug] [2023-10-11T07:39:41.274Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/06f2856557dbf61d57b2f5516d3846cd19649fddf6159f74e7a0a958af769e8a 200
+[debug] [2023-10-11T07:39:41.274Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/chatapplevente/versions/6ed65aa3bd33bd36/files/06f2856557dbf61d57b2f5516d3846cd19649fddf6159f74e7a0a958af769e8a [stream]
+[debug] [2023-10-11T07:39:41.274Z] [hosting][upload queue][FINAL] {"max":1250,"min":973,"avg":1144.25,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":1251}
+[info] ✔  hosting[chatapplevente]: file upload complete 
+[debug] [2023-10-11T07:39:41.275Z] [hosting] deploy completed after 3175ms
+[debug] [2023-10-11T07:39:41.275Z] [rules] releasing cloud.firestore/(default) with ruleset projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094
+[debug] [2023-10-11T07:39:41.275Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases/cloud.firestore/(default) [none]
+[debug] [2023-10-11T07:39:41.275Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases/cloud.firestore/(default) {"release":{"name":"projects/chatapplevente/releases/cloud.firestore/(default)","rulesetName":"projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094"}}
+[debug] [2023-10-11T07:39:41.976Z] <<< [apiv2][status] PATCH https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases/cloud.firestore/(default) 200
+[debug] [2023-10-11T07:39:41.976Z] <<< [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/chatapplevente/releases/cloud.firestore/(default) {"name":"projects/chatapplevente/releases/cloud.firestore","rulesetName":"projects/chatapplevente/rulesets/22613df9-7778-46c1-aa60-62e7050e6094","createTime":"2023-09-15T13:40:54.705643Z","updateTime":"2023-10-11T07:39:41.868102Z"}
+[debug] [2023-10-11T07:39:41.977Z] [rules] updated release projects/chatapplevente/releases/cloud.firestore
+[info] ✔  firestore: released rules firestore.rules to cloud.firestore 
+[info] i  functions: updating Node.js 20 (2nd Gen) function firebase-frameworks-chatapplevente:ssrchatapplevente(europe-west1)... 
+[debug] [2023-10-11T07:39:41.986Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente updateMask=name%2CbuildConfig.runtime%2CbuildConfig.entryPoint%2CbuildConfig.source.storageSource.bucket%2CbuildConfig.source.storageSource.object%2CbuildConfig.environmentVariables%2CserviceConfig.environmentVariables%2CserviceConfig.ingressSettings%2CserviceConfig.timeoutSeconds%2CserviceConfig.serviceAccountEmail%2CserviceConfig.availableMemory%2CserviceConfig.minInstanceCount%2CserviceConfig.maxInstanceCount%2CserviceConfig.maxInstanceRequestConcurrency%2CserviceConfig.availableCpu%2CserviceConfig.vpcConnector%2CserviceConfig.vpcConnectorEgressSettings%2Clabels%2CbuildConfig.buildEnvironmentVariables
+[debug] [2023-10-11T07:39:41.986Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente {"name":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrchatapplevente","source":{"storageSource":{"bucket":"gcf-v2-uploads-255039266622-europe-west1","object":"218a496c-13bd-4385-b4e4-fb2c7c153271.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"chatapplevente\",\"appId\":\"1:255039266622:web:d6a99021fb6b70d8b8d66f\",\"storageBucket\":\"chatapplevente.appspot.com\",\"apiKey\":\"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE\",\"authDomain\":\"chatapplevente.firebaseapp.com\",\"messagingSenderId\":\"255039266622\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"chatapplevente\",\"storageBucket\":\"chatapplevente.appspot.com\"}","GCLOUD_PROJECT":"chatapplevente","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente"},"ingressSettings":null,"timeoutSeconds":null,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-chatapplevente","firebase-functions-hash":"d22d5353624e280d12909767470e424941411e0b"}}
+[debug] [2023-10-11T07:39:43.333Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente 200
+[debug] [2023-10-11T07:39:43.333Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente {"name":"projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-10-11T07:39:43.394481309Z","target":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","verb":"update","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2023-10-11T07:39:43.334Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 [none]
+[debug] [2023-10-11T07:39:43.482Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 200
+[debug] [2023-10-11T07:39:43.483Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 {"name":"projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-10-11T07:39:43.394481309Z","target":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrchatapplevente","source":{"storageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1697009983363263"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1696702881638945"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"chatapplevente\",\"appId\":\"1:255039266622:web:d6a99021fb6b70d8b8d66f\",\"storageBucket\":\"chatapplevente.appspot.com\",\"apiKey\":\"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE\",\"authDomain\":\"chatapplevente.firebaseapp.com\",\"messagingSenderId\":\"255039266622\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"chatapplevente\",\"storageBucket\":\"chatapplevente.appspot.com\"}","GCLOUD_PROJECT":"chatapplevente","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrchatapplevente-mc5iutjkua-ew.a.run.app","serviceAccountEmail":"255039266622-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrchatapplevente-00010-hak","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-chatapplevente","firebase-functions-hash":"d22d5353624e280d12909767470e424941411e0b"},"environment":"GEN_2","url":"https://europe-west1-chatapplevente.cloudfunctions.net/ssrchatapplevente"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}
+[debug] [2023-10-11T07:39:43.984Z] [update-firebase-frameworks-chatapplevente-europe-west1-ssrchatapplevente] Retrying task index 0
+[debug] [2023-10-11T07:39:43.985Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 [none]
+[debug] [2023-10-11T07:39:44.147Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 200
+[debug] [2023-10-11T07:39:44.148Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 {"name":"projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-10-11T07:39:43.394481309Z","target":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrchatapplevente","source":{"storageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1697009983363263"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1696702881638945"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"chatapplevente\",\"appId\":\"1:255039266622:web:d6a99021fb6b70d8b8d66f\",\"storageBucket\":\"chatapplevente.appspot.com\",\"apiKey\":\"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE\",\"authDomain\":\"chatapplevente.firebaseapp.com\",\"messagingSenderId\":\"255039266622\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"chatapplevente\",\"storageBucket\":\"chatapplevente.appspot.com\"}","GCLOUD_PROJECT":"chatapplevente","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrchatapplevente-mc5iutjkua-ew.a.run.app","serviceAccountEmail":"255039266622-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrchatapplevente-00010-hak","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-chatapplevente","firebase-functions-hash":"d22d5353624e280d12909767470e424941411e0b"},"environment":"GEN_2","url":"https://europe-west1-chatapplevente.cloudfunctions.net/ssrchatapplevente"},"stages":[{"name":"BUILD","state":"NOT_STARTED"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}
+[debug] [2023-10-11T07:39:45.149Z] [update-firebase-frameworks-chatapplevente-europe-west1-ssrchatapplevente] Retrying task index 0
+[debug] [2023-10-11T07:39:45.150Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 [none]
+[debug] [2023-10-11T07:39:45.313Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 200
+[debug] [2023-10-11T07:39:45.314Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 {"name":"projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-10-11T07:39:43.394481309Z","target":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrchatapplevente","source":{"storageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1697009983363263"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1696702881638945"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"chatapplevente\",\"appId\":\"1:255039266622:web:d6a99021fb6b70d8b8d66f\",\"storageBucket\":\"chatapplevente.appspot.com\",\"apiKey\":\"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE\",\"authDomain\":\"chatapplevente.firebaseapp.com\",\"messagingSenderId\":\"255039266622\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"chatapplevente\",\"storageBucket\":\"chatapplevente.appspot.com\"}","GCLOUD_PROJECT":"chatapplevente","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrchatapplevente-mc5iutjkua-ew.a.run.app","serviceAccountEmail":"255039266622-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrchatapplevente-00010-hak","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-chatapplevente","firebase-functions-hash":"d22d5353624e280d12909767470e424941411e0b"},"environment":"GEN_2","url":"https://europe-west1-chatapplevente.cloudfunctions.net/ssrchatapplevente"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/255039266622/locations/europe-west1/builds/ec1cdf78-84fa-477c-a484-7e88e4e32499","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=europe-west1/ec1cdf78-84fa-477c-a484-7e88e4e32499?project=255039266622"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}
+[debug] [2023-10-11T07:39:47.315Z] [update-firebase-frameworks-chatapplevente-europe-west1-ssrchatapplevente] Retrying task index 0
+[debug] [2023-10-11T07:39:47.316Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 [none]
+[debug] [2023-10-11T07:39:47.459Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 200
+[debug] [2023-10-11T07:39:47.460Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660 {"name":"projects/chatapplevente/locations/europe-west1/operations/operation-1697009982354-6076bed2db2ed-d3e1ac41-468be660","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2023-10-11T07:39:43.394481309Z","target":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/chatapplevente/locations/europe-west1/functions/ssrchatapplevente","buildConfig":{"runtime":"nodejs20","entryPoint":"ssrchatapplevente","source":{"storageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1697009983363263"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-255039266622-europe-west1","object":"ssrchatapplevente/function-source.zip","generation":"1696702881638945"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"chatapplevente\",\"appId\":\"1:255039266622:web:d6a99021fb6b70d8b8d66f\",\"storageBucket\":\"chatapplevente.appspot.com\",\"apiKey\":\"AIzaSyAIQWjM096WcjZITzx9TSO5ZJwEpzEPkYE\",\"authDomain\":\"chatapplevente.firebaseapp.com\",\"messagingSenderId\":\"255039266622\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"chatapplevente\",\"storageBucket\":\"chatapplevente.appspot.com\"}","GCLOUD_PROJECT":"chatapplevente","EVENTARC_CLOUD_EVENT_SOURCE":"projects/chatapplevente/locations/europe-west1/services/ssrchatapplevente"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrchatapplevente-mc5iutjkua-ew.a.run.app","serviceAccountEmail":"255039266622-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrchatapplevente-00010-hak","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-chatapplevente","firebase-functions-hash":"d22d5353624e280d12909767470e424941411e0b"},"environment":"GEN_2","url":"https://europe-west1-chatapplevente.cloudfunctions.net/ssrchatapplevente"},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/255039266622/locations/europe-west1/builds/ec1cdf78-84fa-477c-a484-7e88e4e32499","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=europe-west1/ec1cdf78-84fa-477c-a484-7e88e4e32499?project=255039266622"},{"name":"SERVICE","state":"NOT_STARTED"}]},"done":false}

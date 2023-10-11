@@ -10,7 +10,6 @@ import {
   limit,
   query,
 } from "firebase/firestore";
-import { randomUUID } from "crypto";
 
 const Choose = () => {
   const [theme, setTheme] = useState("");
@@ -52,15 +51,18 @@ const Choose = () => {
           const ref = query(collection(db, theme), limit(1));
           const querySnapshot = await getDocs(ref);
 
-          querySnapshot.forEach((doc) => {
-            id = doc.data().idd;
+          querySnapshot.forEach(async (doc) => {
+            const id = doc.data().idd;
 
-            deleteDoc(doc.ref);
+            // Delete the document
+            await deleteDoc(doc.ref);
+
+            // Update the count state
+            setCount(0);
+
+            // Navigate to a new location
+            location.replace(`/chats/${id}`);
           });
-
-          // Update the count state
-          setCount(0);
-          location.replace(`/chats/${id}`);
         }
       } catch (error) {
         console.error("Error:", error);
@@ -73,12 +75,28 @@ const Choose = () => {
       <p className="text-xl md:text-3xl w-2/3 font-bold gradient">
         What do you want to talk about?
       </p>
-      <div className="grid grid-cols-2 w-full md:grid-cols-3 lg:grid-cols-4 content-evenly place-content-evenly gap-10 self-center h-full justify-center">
+      <div className="grid grid-cols-1 text-2xl w-full md:grid-cols-2 xl:grid-cols-4 content-evenly place-content-evenly gap-10 self-center h-full justify-center">
+        <div
+          onClick={() => {
+            setTheme("whatever");
+          }}
+          className="hover:cursor-pointer hover:bg-[#323232] ease-in-out duration-300 rounded-lg text-center text-2xl w-full h-32 bg-[#222222] flex flex-col justify-evenly"
+        >
+          Whtevr
+        </div>
+        <div
+          onClick={() => {
+            setTheme("day");
+          }}
+          className="hover:cursor-pointer hover:bg-[#323232] ease-in-out duration-300 rounded-lg text-center w-full h-32 bg-[#222222] flex flex-col justify-evenly"
+        >
+          Your day
+        </div>
         <div
           onClick={() => {
             setTheme("testers");
           }}
-          className="hover:cursor-pointer hover:bg-[#323232] ease-in-out duration-300 rounded-lg text-center text-6xl font-bold w-full h-32 bg-[#222222] flex flex-col justify-evenly"
+          className="hover:cursor-pointer hover:bg-[#323232] ease-in-out duration-300 rounded-lg text-center w-full h-32 bg-[#222222] flex flex-col justify-evenly"
         >
           Test
         </div>

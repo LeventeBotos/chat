@@ -1,26 +1,82 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 
-import { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import { GrClose } from "react-icons/gr";
+import { useEffect, useState } from "react";
+import { auth } from "./Firebase";
+import { signOut } from "firebase/auth";
+import { BiLogOut } from "react-icons/bi";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentUserImg, setCurrentUserImg] = useState(
+    auth.currentUser?.photoURL
+  );
 
+  useEffect(() => {
+    setCurrentUserImg(auth.currentUser?.photoURL);
+  });
   const togglePanel = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-30 flex h-20 items-center justify-between bg-[#f5f5f5] bg-opacity-75 p-3 backdrop-blur-lg backdrop-filter md:h-24">
-      <a href="/">
-        <img
-          src="/logo.png"
-          alt="logo"
-          className=" pl-2 p-1 h-20 opacity-100 md:h-24"
-        />
+    <nav className=" h-24 flex flex-row justify-between p-2 px-5 items-center w-full">
+      <a href="/" className=" nothover  text-xl md:text-6xl font-bold gradient">
+        CH@
       </a>
+      <div className="bg-none">
+        {currentUserImg ? (
+          <img
+            onClick={togglePanel}
+            src={currentUserImg}
+            alt="logo"
+            className="rounded-full shadow-lg h-12 opacity-100 w-12"
+          />
+        ) : (
+          <div className="rounded-full shadow-lg h-12 opacity-100 w-12 bg-[#252525]" />
+        )}
+        {isOpen && (
+          <div
+            onClick={(e) => e.preventDefault()}
+            className="absolute justify-evenly top-24 bg-[#222222] text-center text-white w-96 h-96 items-center right-10 rounded-lg z-50 flex flex-col"
+          >
+            {auth.currentUser?.photoURL && (
+              <img
+                src={auth.currentUser?.photoURL}
+                alt="img"
+                className="rounded-full"
+              />
+            )}
+            <div>
+              <p className="text-2xl font-bold">Hiya,</p>
+              <p className="text-xl"> {auth.currentUser?.displayName}</p>
+            </div>
+            {auth.currentUser?.email}
+            <div
+              onClick={() => {
+                signOut(auth);
+
+                location.replace("/");
+              }}
+              className=" my-5 rounded-full flex flex-row justify-center items-center gap-3 w-3/4 border-[#333333] border-2 p-2 hover:bg-[#333333] ease-in-out duration-300 text-center"
+            >
+              {" "}
+              <BiLogOut />
+              <p>Sign Out</p>
+            </div>
+            <div className="flex text-sm flex-row text-gray-200 w-full justify-evenly">
+              <a className="w-1/3 cursor-pointer bg-none underline hover:text-gray-300">
+                Terms Of Service
+              </a>
+              <a className="w-1/3 cursor-pointer bg-none underline hover:text-gray-300">
+                About Us
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/*
       <button
         id="nav-toggle"
         aria-label="menu"
@@ -60,11 +116,7 @@ export const Navbar = () => {
         </a>
       </div>
 
-      {/* 
-      =========================================================================================================================
-      Mobile Navbar
-      =========================================================================================================================
-      */}
+     
       <div
         className={`fixed flex-col left-0 top-0 pt-10 z-30 flex items-center w-72 bg-white h-full lg:hidden ${
           isOpen ? "flex" : "hidden"
@@ -95,7 +147,7 @@ export const Navbar = () => {
             Example
           </button>
         </a>
-      </div>
+      </div> */}
     </nav>
   );
 };
