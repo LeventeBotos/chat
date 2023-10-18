@@ -21,31 +21,35 @@ export const Navbar = () => {
 
   return (
     <nav className=" h-24 flex flex-row justify-between p-2 px-5 items-center w-full">
-      <a href="/" className=" nothover  text-xl md:text-6xl font-bold gradient">
-        CH@
+      <a href="/" className=" nothover  text-xl md:text-5xl font-bold gradient">
+        Deb8
       </a>
       <div className="bg-none">
-        {currentUserImg ? (
+        {auth.currentUser?.photoURL ? (
           <img
             onClick={togglePanel}
-            src={currentUserImg}
+            src={auth.currentUser?.photoURL}
             alt="logo"
-            className="rounded-full shadow-lg h-12 opacity-100 w-12"
+            className="rounded-full shadow-lg h-16 opacity-100 w-16"
           />
         ) : (
-          <div className="rounded-full shadow-lg h-12 opacity-100 w-12 bg-[#252525]" />
+          <div className="rounded-full shadow-lg h-16 opacity-100 w-16 bg-[#252525]" />
         )}
         {isOpen && (
           <div
-            onClick={(e) => e.preventDefault()}
+            // onClick={(e) => e.preventDefault()}
             className="absolute justify-evenly top-24 bg-[#222222] text-center text-white w-96 h-96 items-center right-10 rounded-lg z-50 flex flex-col"
           >
-            {auth.currentUser?.photoURL && (
-              <img
-                src={auth.currentUser?.photoURL}
-                alt="img"
-                className="rounded-full"
-              />
+            {auth.currentUser?.photoURL ? (
+              <div className="flex  flex-col">
+                <img
+                  src={auth.currentUser?.photoURL}
+                  alt="img"
+                  className="h-24  w-24 rounded-full"
+                />
+              </div>
+            ) : (
+              <p className="text-white self-center">wrong</p>
             )}
             <div>
               <p className="text-2xl font-bold">Hiya,</p>
@@ -65,10 +69,18 @@ export const Navbar = () => {
               <p>Sign Out</p>
             </div>
             <div className="flex text-sm flex-row text-gray-200 w-full justify-evenly">
-              <a className="w-1/3 cursor-pointer bg-none underline hover:text-gray-300">
+              <a
+                // onClick={() => location.replace("/tos")}
+                href="/tos"
+                className="w-1/3 cursor-pointer bg-none underline hover:text-gray-300"
+              >
                 Terms Of Service
               </a>
-              <a className="w-1/3 cursor-pointer bg-none underline hover:text-gray-300">
+              <a
+                // onClick={() => location.replace("/about")}
+                href="/about"
+                className="w-1/3 cursor-pointer bg-none underline hover:text-gray-300"
+              >
                 About Us
               </a>
             </div>

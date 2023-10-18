@@ -8,6 +8,7 @@ import {
   query,
   limit,
 } from "firebase/firestore";
+import { Navbar } from "./Navbar";
 
 const Choose = () => {
   const [theme, setTheme] = useState("");
@@ -74,11 +75,12 @@ const Choose = () => {
   }, [theme]);
 
   return (
-    <div className="flex p-5 gap-5 w-full flex-col h-screen justify-center items-center">
+    <div className="flex  gap-5 w-full flex-col min-h-screen items-center">
+      <Navbar />
       <p className="text-xl md:text-3xl w-2/3 font-bold gradient">
         What do you want to talk about?
       </p>
-      <div className="grid grid-cols-1 text-2xl w-full md:grid-cols-2 xl:grid-cols-4 content-evenly place-content-evenly gap-10 self-center h-full justify-center">
+      <div className="grid p-5 grid-cols-1 text-2xl w-full md:grid-cols-2 xl:grid-cols-4 content-evenly place-content-evenly gap-10 self-center h-full justify-center">
         {themes.map((name, index) => (
           <div
             onClick={() => {

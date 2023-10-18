@@ -1,0 +1,298 @@
+[debug] [2023-10-18T05:48:28.751Z] ----------------------------------------------------------------------
+[debug] [2023-10-18T05:48:28.754Z] Command:       /Users/leventebotos/.nvm/versions/node/v20.3.1/bin/node /Users/leventebotos/.bun/bin/firebase deploy
+[debug] [2023-10-18T05:48:28.754Z] CLI Version:   12.5.4
+[debug] [2023-10-18T05:48:28.754Z] Platform:      darwin
+[debug] [2023-10-18T05:48:28.754Z] Node Version:  v20.3.1
+[debug] [2023-10-18T05:48:28.754Z] Time:          Wed Oct 18 2023 07:48:28 GMT+0200 (GMT+02:00)
+[debug] [2023-10-18T05:48:28.754Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-18T05:48:28.755Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-10-18T05:48:28.806Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-18T05:48:28.806Z] > authorizing via signed-in user (botos.levente2007@gmail.com)
+[debug] [2023-10-18T05:48:28.807Z] [iam] checking project deb8app for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-18T05:48:28.807Z] > refreshing access token with scopes: []
+[debug] [2023-10-18T05:48:28.807Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-10-18T05:48:28.807Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-10-18T05:48:29.137Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-10-18T05:48:29.137Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-10-18T05:48:29.155Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions [none]
+[debug] [2023-10-18T05:48:29.155Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:48:29.155Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-18T05:48:29.856Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-10-18T05:48:29.856Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-10-18T05:48:31.271Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions 200
+[debug] [2023-10-18T05:48:31.271Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-18T05:48:31.272Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deb8app [none]
+[debug] [2023-10-18T05:48:31.854Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deb8app 200
+[debug] [2023-10-18T05:48:31.855Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deb8app {"projectId":"deb8app","projectNumber":"346157443053","displayName":"deb8app","name":"projects/deb8app","resources":{"hostingSite":"deb8app"},"state":"ACTIVE","etag":"1_3ef26a0e-abd0-40cf-9111-5ff0a50e54ae"}
+[debug] [2023-10-18T05:48:32.817Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/deb8app/sites pageToken=&pageSize=10
+[debug] [2023-10-18T05:48:34.243Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/deb8app/sites 200
+[debug] [2023-10-18T05:48:34.243Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/deb8app/sites {"sites":[{"name":"projects/deb8app/sites/deb8app","defaultUrl":"https://deb8app.web.app","appId":"1:346157443053:web:ae83c17c7f40372f12e9e4","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-18T05:48:34.244Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:346157443053:web:ae83c17c7f40372f12e9e4/config [none]
+[debug] [2023-10-18T05:48:34.986Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:346157443053:web:ae83c17c7f40372f12e9e4/config 200
+[debug] [2023-10-18T05:48:34.986Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:346157443053:web:ae83c17c7f40372f12e9e4/config {"projectId":"deb8app","appId":"1:346157443053:web:ae83c17c7f40372f12e9e4","storageBucket":"deb8app.appspot.com","apiKey":"AIzaSyDDQMxK4s3qIRoOt4xB3J4gygqSHKREujU","authDomain":"deb8app.firebaseapp.com","messagingSenderId":"346157443053","measurementId":"G-GHWGHERDJH"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info] - info Creating an optimized production build...
+
+[info] - warn Compiled with warnings
+
+./node_modules/node-fetch/lib/index.js
+Module not found: Can't resolve 'encoding' in '/Users/leventebotos/chat/node_modules/node-fetch/lib'
+
+Import trace for requested module:
+./node_modules/node-fetch/lib/index.js
+./node_modules/@firebase/auth/dist/node-esm/index.js
+./node_modules/firebase/auth/dist/index.mjs
+./app/Login.tsx
+./app/page.tsx
+
+[info] 
+
+[info] - info Linting and checking validity of types...
+
+[info] 
+./app/Chat.tsx
+128:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./app/Navbar.tsx
+15:3  Warning: React Hook useEffect contains a call to 'setCurrentUserImg'. Without a list of dependencies, this can lead to an infinite chain of updates. To fix this, pass [] as a second argument to the useEffect Hook.  react-hooks/exhaustive-deps
+29:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+45:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+
+[info] - info Collecting page data...
+
+[info] - info Generating static pages (0/7)
+
+[info] - info Generating static pages (1/7)
+
+[info] - info Generating static pages (3/7)
+
+[info] - info Generating static pages (5/7)
+
+[info] - info Generating static pages (7/7)
+
+[info] - info Finalizing page optimization...
+
+[info] 
+
+[info] Route (app)                                Size     First Load JS
+┌ ○ /                                      0 B                0 B
+├ ○ /about                                 1.27 kB         185 kB
+├ ○ /about/hu                              137 B          77.8 kB
+├ ○ /chats                                 250 B           187 kB
+├ λ /chats/[slug]                          337 B           187 kB
+└ ○ /tos                                   1.27 kB         185 kB
++ First Load JS shared by all              77.7 kB
+  ├ chunks/769-3533a18838d29a2a.js         25.2 kB
+  ├ chunks/bce60fc1-b7f0fbba86d0a929.js    50.5 kB
+  ├ chunks/main-app-fa9e14246906fddd.js    217 B
+  └ chunks/webpack-9dbbf723e84a853b.js     1.75 kB
+
+Route (pages)                              Size     First Load JS
+─ ○ /404                                   182 B          74.8 kB
++ First Load JS shared by all              74.7 kB
+  ├ chunks/framework-8883d1e9be70c3da.js   45 kB
+  ├ chunks/main-1f5ee9b62ad8b8f1.js        27.7 kB
+  ├ chunks/pages/_app-998b8fceeadee23e.js  195 B
+  └ chunks/webpack-9dbbf723e84a853b.js     1.75 kB
+
+
+[info] λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static component /chats/[slug]/page
+[info] 
+[debug] [2023-10-18T05:49:17.003Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "europe-west1"
+      },
+      "site": "deb8app",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssrdeb8app",
+            "region": "europe-west1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "**/*.[jt]s",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "__FIREBASE_DEFAULTS__=eyJjb25maWciOnsicHJvamVjdElkIjoiZGViOGFwcCIsImFwcElkIjoiMTozNDYxNTc0NDMwNTM6d2ViOmFlODNjMTdjN2Y0MDM3MmYxMmU5ZTQiLCJzdG9yYWdlQnVja2V0IjoiZGViOGFwcC5hcHBzcG90LmNvbSIsImFwaUtleSI6IkFJemFTeUREUU14SzRzM3FJUm9PdDR4QjNKNGd5Z3FTSEtSRXVqVSIsImF1dGhEb21haW4iOiJkZWI4YXBwLmZpcmViYXNlYXBwLmNvbSIsIm1lc3NhZ2luZ1NlbmRlcklkIjoiMzQ2MTU3NDQzMDUzIiwibWVhc3VyZW1lbnRJZCI6IkctR0hXR0hFUkRKSCJ9LCJfYXV0aFRva2VuU3luY1VSTCI6Ii9fX3Nlc3Npb24ifQ; SameSite=Strict; Expires=2025-09-11T16:29:17.003Z; Path=/;"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "public": ".firebase/deb8app/hosting",
+      "webFramework": "next_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase/deb8app/functions",
+      "codebase": "firebase-frameworks-deb8app"
+    }
+  ]
+}
+[debug] [2023-10-18T05:49:17.003Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-18T05:49:17.003Z] > authorizing via signed-in user (botos.levente2007@gmail.com)
+[debug] [2023-10-18T05:49:17.004Z] [iam] checking project deb8app for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-10-18T05:49:17.004Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions [none]
+[debug] [2023-10-18T05:49:17.004Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:17.004Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-10-18T05:49:18.135Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions 200
+[debug] [2023-10-18T05:49:18.135Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/deb8app:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'deb8app'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-10-18T05:49:18.140Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deb8app [none]
+[debug] [2023-10-18T05:49:18.748Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deb8app 200
+[debug] [2023-10-18T05:49:18.749Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deb8app {"projectId":"deb8app","projectNumber":"346157443053","displayName":"deb8app","name":"projects/deb8app","resources":{"hostingSite":"deb8app"},"state":"ACTIVE","etag":"1_3ef26a0e-abd0-40cf-9111-5ff0a50e54ae"}
+[info] i  functions: preparing codebase firebase-frameworks-deb8app for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-10-18T05:49:18.752Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-10-18T05:49:18.752Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:18.755Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-10-18T05:49:18.755Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:18.757Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudbuild.googleapis.com [none]
+[debug] [2023-10-18T05:49:18.757Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudbuild.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:18.758Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/artifactregistry.googleapis.com [none]
+[debug] [2023-10-18T05:49:18.759Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/artifactregistry.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:20.267Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/runtimeconfig.googleapis.com 200
+[debug] [2023-10-18T05:49:20.267Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-10-18T05:49:20.268Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/artifactregistry.googleapis.com 200
+[debug] [2023-10-18T05:49:20.268Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-10-18T05:49:20.269Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudbuild.googleapis.com 200
+[debug] [2023-10-18T05:49:20.269Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-10-18T05:49:20.270Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudfunctions.googleapis.com 200
+[debug] [2023-10-18T05:49:20.270Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-10-18T05:49:20.270Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deb8app/adminSdkConfig [none]
+[debug] [2023-10-18T05:49:20.591Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deb8app/adminSdkConfig 200
+[debug] [2023-10-18T05:49:20.591Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deb8app/adminSdkConfig {"projectId":"deb8app","storageBucket":"deb8app.appspot.com"}
+[debug] [2023-10-18T05:49:20.592Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/deb8app/configs [none]
+[debug] [2023-10-18T05:49:21.347Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/deb8app/configs 200
+[debug] [2023-10-18T05:49:21.348Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/deb8app/configs {}
+[debug] [2023-10-18T05:49:21.350Z] Validating nodejs source
+[debug] [2023-10-18T05:49:22.563Z] > [functions] package.json contents: {
+  "name": "chat",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "18.16.1",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "dotenv": "^16.0.3",
+    "eslint": "8.39.0",
+    "firebase": "latest",
+    "next": "13.4.6",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-firebase-hooks": "^5.1.1",
+    "react-icons": "^4.11.0",
+    "typescript": "5.0.4",
+    "firebase-frameworks": "^0.10.4",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "20"
+  }
+}
+[debug] [2023-10-18T05:49:22.563Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase firebase-frameworks-deb8app to determine what to deploy 
+[debug] [2023-10-18T05:49:22.564Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-10-18T05:49:22.570Z] Found firebase-functions binary at '/Users/leventebotos/chat/.firebase/deb8app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8992
+
+[debug] [2023-10-18T05:49:22.759Z] Got response from /__/functions.yaml {"endpoints":{"ssrdeb8app":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["europe-west1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssrdeb8app"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase/deb8app/functions directory for uploading... 
+[info] i  functions: packaged /Users/leventebotos/chat/.firebase/deb8app/functions (158.62 MB) for uploading 
+[debug] [2023-10-18T05:49:32.902Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/deb8app/locations/-/functions [none]
+[debug] [2023-10-18T05:49:33.802Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/deb8app/locations/-/functions 200
+[debug] [2023-10-18T05:49:33.802Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/deb8app/locations/-/functions {}
+[debug] [2023-10-18T05:49:33.803Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/deb8app/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-10-18T05:49:34.868Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/deb8app/locations/-/functions 200
+[debug] [2023-10-18T05:49:34.868Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/deb8app/locations/-/functions {"functions":[{"name":"projects/deb8app/locations/europe-west1/functions/ssrdeb8app","buildConfig":{"build":"projects/346157443053/locations/europe-west1/builds/777e623c-bbe1-45ab-b54e-e910a61fc8b9","runtime":"nodejs20","entryPoint":"ssrdeb8app","source":{"storageSource":{"bucket":"gcf-v2-sources-346157443053-europe-west1","object":"ssrdeb8app/function-source.zip","generation":"1697536289434780"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-346157443053-europe-west1","object":"ssrdeb8app/function-source.zip","generation":"1697536289434780"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/deb8app/locations/europe-west1/services/ssrdeb8app","timeoutSeconds":60,"environmentVariables":{"__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"deb8app\",\"appId\":\"1:346157443053:web:ae83c17c7f40372f12e9e4\",\"storageBucket\":\"deb8app.appspot.com\",\"apiKey\":\"AIzaSyDDQMxK4s3qIRoOt4xB3J4gygqSHKREujU\",\"authDomain\":\"deb8app.firebaseapp.com\",\"messagingSenderId\":\"346157443053\",\"measurementId\":\"G-GHWGHERDJH\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"deb8app\",\"storageBucket\":\"deb8app.appspot.com\"}","GCLOUD_PROJECT":"deb8app","EVENTARC_CLOUD_EVENT_SOURCE":"projects/deb8app/locations/europe-west1/services/ssrdeb8app"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssrdeb8app-iasilqnybq-ew.a.run.app","serviceAccountEmail":"346157443053-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssrdeb8app-00003-pup","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2023-10-17T09:54:39.197355641Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-deb8app","firebase-functions-hash":"00414ca23cc002072d5b8619f2bea2693dd4b293"},"environment":"GEN_2","url":"https://europe-west1-deb8app.cloudfunctions.net/ssrdeb8app"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-10-18T05:49:34.874Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/run.googleapis.com [none]
+[debug] [2023-10-18T05:49:34.874Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/run.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:34.877Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/eventarc.googleapis.com [none]
+[debug] [2023-10-18T05:49:34.877Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/eventarc.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:34.878Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/pubsub.googleapis.com [none]
+[debug] [2023-10-18T05:49:34.879Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/pubsub.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:34.880Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/storage.googleapis.com [none]
+[debug] [2023-10-18T05:49:34.880Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/storage.googleapis.com x-goog-quota-user=projects/deb8app
+[debug] [2023-10-18T05:49:35.953Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/eventarc.googleapis.com 200
+[debug] [2023-10-18T05:49:35.953Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/eventarc.googleapis.com [omitted]
+[info] ✔  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-10-18T05:49:35.955Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/pubsub.googleapis.com 200
+[debug] [2023-10-18T05:49:35.955Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/pubsub.googleapis.com [omitted]
+[info] ✔  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-10-18T05:49:35.956Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/storage.googleapis.com 200
+[debug] [2023-10-18T05:49:35.956Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/storage.googleapis.com [omitted]
+[info] ✔  functions: required API storage.googleapis.com is enabled 
+[debug] [2023-10-18T05:49:36.011Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/run.googleapis.com 200
+[debug] [2023-10-18T05:49:36.011Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/deb8app/services/run.googleapis.com [omitted]
+[info] ✔  functions: required API run.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-10-18T05:49:36.012Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/346157443053/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-18T05:49:36.012Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/346157443053/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-18T05:49:36.996Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/346157443053/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-18T05:49:36.996Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/346157443053/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-346157443053@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"109890359735676826081"}}
+[debug] [2023-10-18T05:49:37.204Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/346157443053/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-18T05:49:37.205Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/346157443053/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-346157443053@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"108278779193051104632"}}
+[debug] [2023-10-18T05:49:37.210Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/deb8app [none]
+[debug] [2023-10-18T05:49:37.794Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/deb8app 200
+[debug] [2023-10-18T05:49:37.794Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/deb8app {"projectId":"deb8app","projectNumber":"346157443053","displayName":"deb8app","name":"projects/deb8app","resources":{"hostingSite":"deb8app"},"state":"ACTIVE","etag":"1_3ef26a0e-abd0-40cf-9111-5ff0a50e54ae"}
+[debug] [2023-10-18T05:49:37.800Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/deb8app/versions [none]
+[debug] [2023-10-18T05:49:37.800Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/deb8app/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-10-18T05:49:39.144Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/deb8app/versions 200
+[debug] [2023-10-18T05:49:39.145Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/deb8app/versions {"name":"projects/346157443053/sites/deb8app/versions/282837576ead9c11","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-10-18T05:49:39.147Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/deb8app/locations/europe-west1/functions:generateUploadUrl [none]
+[debug] [2023-10-18T05:49:39.338Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/deb8app/locations/europe-west1/functions:generateUploadUrl 200
+[debug] [2023-10-18T05:49:39.338Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/deb8app/locations/europe-west1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-346157443053-europe-west1/ed3f01f5-0100-471c-9e8f-775ca0b98577.zip?GoogleAccessId=service-346157443053@gcf-admin-robot.iam.gserviceaccount.com&Expires=1697609979&Signature=hSQ9RFktSrT0gGmQo4gK%2Fr4wHBhCp83ZDhWENCUtyIvIW6c%2BNQ7tHf0ALk7KeWsgTBPO%2BCLvX5HKaKbyZaYA19zMvAxIM%2BpSV54NZH8sVgHKPsALofoHdWwod4Y4e6xKLUu874Hy7qPM%2BVbrPoeksCv2DOrWAtgk4rSeRj6OPMsXfkiJvoiifjXi%2Bpd278R%2FvPQYuSNjSVETGEpTscmpzrkfSpg3ea2%2F1S2BZR%2FFolgnZKCOy%2BXpJoBy4OJh3oOn%2B4l7pEsZyeli1q92YNdA7S%2F67yLj0lPHzbDrMvt%2BQMBIgeYadRNIc%2FA7OqiMjAfNvE%2BFuUpH%2BZNaX1Pl5%2FPGMw%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-346157443053-europe-west1","object":"ed3f01f5-0100-471c-9e8f-775ca0b98577.zip"}}
+[debug] [2023-10-18T05:49:39.341Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-346157443053-europe-west1/ed3f01f5-0100-471c-9e8f-775ca0b98577.zip GoogleAccessId=service-346157443053%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1697609979&Signature=hSQ9RFktSrT0gGmQo4gK%2Fr4wHBhCp83ZDhWENCUtyIvIW6c%2BNQ7tHf0ALk7KeWsgTBPO%2BCLvX5HKaKbyZaYA19zMvAxIM%2BpSV54NZH8sVgHKPsALofoHdWwod4Y4e6xKLUu874Hy7qPM%2BVbrPoeksCv2DOrWAtgk4rSeRj6OPMsXfkiJvoiifjXi%2Bpd278R%2FvPQYuSNjSVETGEpTscmpzrkfSpg3ea2%2F1S2BZR%2FFolgnZKCOy%2BXpJoBy4OJh3oOn%2B4l7pEsZyeli1q92YNdA7S%2F67yLj0lPHzbDrMvt%2BQMBIgeYadRNIc%2FA7OqiMjAfNvE%2BFuUpH%2BZNaX1Pl5%2FPGMw%3D%3D
+[debug] [2023-10-18T05:49:39.341Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-346157443053-europe-west1/ed3f01f5-0100-471c-9e8f-775ca0b98577.zip [stream]

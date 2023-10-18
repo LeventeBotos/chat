@@ -57,8 +57,11 @@ function App() {
   return (
     <div className=" flex flex-col md:flex-row h-screen">
       <div className="p-5 flex flex-col justify-center gap-5 text-center w-full md:w-1/2">
-        <div className="text-2xl md:text-4xl">The All New Platform</div>
-        <div className="text-4xl md:text-8xl font-bold gradient">CH@</div>
+        <p className="text-2xl md:text-4xl">The All New Platform</p>
+        <p className="text-4xl md:text-8xl font-bold gradient">Deb8</p>
+        <a href="/about" className=" w-36 self-center">
+          Learn more
+        </a>
       </div>
 
       <form
