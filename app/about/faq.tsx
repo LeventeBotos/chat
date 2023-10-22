@@ -4,7 +4,7 @@ const page = () => {
   return (
     <div className="w-full text-white p-5 text-lg md:text-xl flex justify-evenly">
       <div className="w-full md:w-2/3 self-center flex flex-col gap-5">
-        <p className="gradient text-3xl md:text-5xl font-bold ">Deb8</p>
+        <p className="gradient text-3xl md:text-5xl font-bold ">FAQ</p>
         <div>
           <p className="font-semibold text-2xl md:text-3xl">Why use Deb8?</p>
           <p>

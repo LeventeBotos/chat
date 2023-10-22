@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -14,7 +13,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     setCurrentUserImg(auth.currentUser?.photoURL);
-  });
+  }, []);
   const togglePanel = () => {
     setIsOpen(!isOpen);
   };
@@ -26,19 +25,31 @@ export const Navbar = () => {
       </a>
       <div className="bg-none">
         {auth.currentUser?.photoURL ? (
-          <img
-            onClick={togglePanel}
-            src={auth.currentUser?.photoURL}
-            alt="logo"
-            className="rounded-full shadow-lg h-16 opacity-100 w-16"
-          />
+          <div className="flex  flex-col">
+            <img
+              src={auth.currentUser?.photoURL}
+              alt="img"
+              onClick={togglePanel}
+              className="h-16 shadow-lg w-16 rounded-full"
+            />
+          </div>
         ) : (
-          <div className="rounded-full shadow-lg h-16 opacity-100 w-16 bg-[#252525]" />
+          <div className="text-center " onClick={togglePanel}>
+            {auth.currentUser?.displayName ? (
+              <p className="gradientbg self-center flex flex-col text-3xl select-none font-semibold justify-evenly w-16 h-16 rounded-full">
+                {auth.currentUser.displayName[0]}
+              </p>
+            ) : (
+              <p className="gradientbg self-center flex flex-col justify-evenly font-bold text-xl w-16 h-16 rounded-full">
+                Me
+              </p>
+            )}
+          </div>
         )}
         {isOpen && (
           <div
             // onClick={(e) => e.preventDefault()}
-            className="absolute justify-evenly top-24 bg-[#222222] text-center text-white w-96 h-96 items-center right-10 rounded-lg z-50 flex flex-col"
+            className="absolute justify-evenly top-20 md:top-24 shadow-lg bg-[#222222] text-center text-white w-96 h-96 items-center md:right-10 right-0 rounded-lg z-50 flex flex-col"
           >
             {auth.currentUser?.photoURL ? (
               <div className="flex  flex-col">
@@ -49,7 +60,17 @@ export const Navbar = () => {
                 />
               </div>
             ) : (
-              <p className="text-white self-center">wrong</p>
+              <div className="text-center ">
+                {auth.currentUser?.email ? (
+                  <p className="gradientbg self-center flex flex-col text-5xl select-none font-semibold justify-evenly w-24 h-24 rounded-full">
+                    {auth.currentUser.email[0]}
+                  </p>
+                ) : (
+                  <p className="gradientbg self-center flex flex-col justify-evenly font-bold text-3xl w-24 h-24 rounded-full">
+                    Me
+                  </p>
+                )}
+              </div>
             )}
             <div>
               <p className="text-2xl font-bold">Hiya,</p>

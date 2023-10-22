@@ -5,7 +5,10 @@ const page = () => {
   return (
     <div className="text-white h-screen text-2xl md:text-4xl flex flex-col text-center justify-evenly">
       <Navbar />
-      <p> Dont be a dick.</p>
+      <p className="h-full text-center flex flex-col justify-evenly">
+        {" "}
+        Dont be a dick.
+      </p>
     </div>
   );
 };

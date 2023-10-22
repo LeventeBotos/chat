@@ -7,6 +7,8 @@ import {
   getDocs,
   query,
   limit,
+  doc,
+  setDoc,
 } from "firebase/firestore";
 import { Navbar } from "./Navbar";
 
@@ -33,7 +35,6 @@ const Choose = () => {
 
     fetchData();
   }, []);
-
   useEffect(() => {
     async function inner() {
       try {
@@ -45,10 +46,21 @@ const Choose = () => {
         const newCount = q.size;
 
         if (newCount === 0) {
-          const id = theme + Math.random().toString(36).substring(2, 15);
+          const id =
+            theme + Math.random().toString(36).substring(2, 15).toString();
 
           // Add a document to the collection
           await addDoc(collection(db, theme), { theme: theme, idd: id });
+
+          // Create chat metadata document
+          await setDoc(doc(db, "chat_metadata", id.toString()), {
+            id: id,
+            // chatId: id,
+            // user1: "User1's Name",
+            // user2: "User2's Name", // Replace with actual user names
+            theme: theme,
+          });
+
           location.replace(`/chats/${id}`);
         } else {
           const ref = query(collection(db, theme), limit(1));

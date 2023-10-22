@@ -30,6 +30,31 @@ html {
   text-align: center;
 }
 
+.gradientbg {
+  /* background: radial-gradient(
+    hsl(150 100% 60%), 
+    hsl(200 100% 60%) 
+  ) fixed; */
+  background: radial-gradient(
+    hsl(210 100% 60%),
+    hsl(150 100% 60%),
+    hsl(210 100% 60%)
+  ) fixed;
+  /* background: 
+    radial-gradient(
+     at center, #3498db, #9b59b6
+    ); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: white;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.h90 {
+  height: auto;
+}
+
 body {
   scroll-behavior: smooth;
 }

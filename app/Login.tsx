@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { GrGoogle } from "react-icons/gr";
 import { AiOutlineGoogle } from "react-icons/ai";
+import { addDoc, collection } from "firebase/firestore";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -23,6 +24,16 @@ function App() {
     console.log("signup");
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      if (user) {
+        const userRef = collection(db, "users"); // "users" is the collection name
+        await addDoc(userRef, {
+          name: name,
+          email: email,
+          password: password,
+          username: username,
+        });
+      }
     } catch (e) {
       console.error(e);
     }
