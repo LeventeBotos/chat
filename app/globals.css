@@ -8,8 +8,9 @@
 } */
 
 html {
-  background-color: #1f1f1f;
+  background-color: #111111;
 }
+
 
 .gradient {
   /* background: radial-gradient(
@@ -52,11 +53,32 @@ html {
 }
 
 .h90 {
-  height: auto;
+  height: 92%;
 }
 
 body {
   scroll-behavior: smooth;
+}
+.gradlink {
+  background: linear-gradient(
+      to right,
+      hsl(150, 100%, 60%),
+      hsl(210, 100%, 60%)
+    ),
+    linear-gradient(
+      to right,
+      hsl(210, 100%, 60%),
+      hsl(150, 100%, 60%)
+    
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.gradlink:hover:not(.nothover) {
+  background-size: 0 3px, 100% 3px;
 }
 
 a {
@@ -163,3 +185,14 @@ background-color: black;
   }
 }
 
+.fade-message {
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-message.visible {
+  opacity: 1;
+}
+
+.fade-message.hidden {
+  opacity: 0;
+}
